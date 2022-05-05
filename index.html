@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>RPS-Game</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="text-white h1 mx-auto navbar-text">
+            <span style="color:rgb(219, 109, 145)">Rock</span> -
+            <span style="color: rgb(73, 172, 205);">Paper</span> -
+            <span style="color:rgb(255, 255, 11)">Scissors</span>
+        </span>
+    </nav>
+    <div class="container">
+        <br> <br>
+        <div class="score card text-center">
+            <div class="card-header">
+                <h3>Score</h3>
+            </div>
+            <div class="row">
+                <div class="col container">
+                    <h2>Player</h2>
+                    <h2 class="p-count count">0</h2>
+                </div>
+                <div class="col container">
+                    <h2>Computer</h2>
+                    <h2 class="c-count count">0</h2>
+                </div>
+            </div>
+            <h5 class="movesleft">Rounds Left: 10 </h5>
+        </div>
+        <div class="playset">
+            <div class="comp-display">
+                <p class="computer-choice">Computer's Choice:</p>
+                <span id="result"></span>
+            </div>
+            <!--Final result of game -->
+            <div class="result"></div>
+
+            <!--Options available to player to play game -->
+            <button type="button" class="play btn btn-primary">Click to Play next round</button>
+
+            <!-- <p class="player-choice">You Chose: <span id="p-choice"></span></p> -->
+            <br> <br>
+            <div class="move">Click on an image to choose</div>
+            <div class="options">
+                <button class="rock btn" value="rock"><img class="img-select" src="assets/rock.png"
+                        width="200px"></button>
+                <button class="paper btn" value="paper"><img class="img-select" src="assets/paper.png"
+                        width="200px"></button>
+                <button class="scissor btn" value="scissors"><img class="img-select" src="assets/scissors.png"
+                        width="200px"></button>
+            </div>
+            <br> <br>
+        </div>
+        <!--Reload the game -->
+        <button class="reload btn btn-success" style="display: none;"></button>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
