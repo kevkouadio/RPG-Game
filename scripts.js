@@ -16,7 +16,7 @@ const game = () => {
 
     intervalHandle = setInterval(() => {
         getRandomImage()
-    }, 100);
+    }, 150);
 
     const playGame = () => {
         const rockBtn = document.querySelector('.rock');
@@ -26,9 +26,8 @@ const game = () => {
         const play = document.querySelector(".play");
         play.style.display = 'none';
         const result = document.querySelector('.result');
-        const playerSeleted = document.getElementById('#p-choice');
 
-        //Function to start playing game
+        
         playerOptions.forEach(option => {
 
             option.addEventListener('click', function () {
@@ -52,42 +51,35 @@ const game = () => {
                 }
 
                 playerOptions.forEach(option => {
-                    console.log(this.value);
-                    
                     option.disabled = true;
                     clearInterval(intervalHandle);
                     play.style.display = 'block'
                     result.style.display = 'block'
-                    //playerSeleted.innerText = this.value;
                 })
 
-                //this.style.opacity = 1;
-                // Function to check who wins
                 winner(this.value, computerChoice)
 
-                // Calling gameOver function after 10 moves
                 if (moves == 10) {
                     gameOver(playerOptions, movesLeft);
                 }
             })
         })
-        //random()
+ 
         play.addEventListener('click', function () {
                     
             playerOptions.forEach(option => {
                 option.disabled = false;
-                //this.style.opacity = 1;
                 result.style.display = 'none';
             })
             intervalHandle = setInterval(() => {
                 getRandomImage()
-            }, 100); 
+            }, 150); 
             play.style.display = 'none';
             
         })
     }
 
-    // Function to decide winner
+
     const winner = (player, computer) => {
         const result = document.querySelector('.result');
         const playerScoreBoard = document.querySelector('.p-count');
@@ -133,8 +125,7 @@ const game = () => {
         }
     }
 
-    
-    // Function to run when game is over
+
     const gameOver = (playerOptions, movesLeft) => {
 
         const chooseMove = document.querySelector('.move');
@@ -151,7 +142,6 @@ const game = () => {
 
        play.style.display = "none";
 
-        //chooseMove.innerText = 'Game Over!!'
         movesLeft.style.display = 'none';
 
         if (playerScore > computerScore) {
